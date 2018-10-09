@@ -5,7 +5,25 @@
     scroll-x
     scroll-y
   >
-      <image wx:if="{{imgArr.length !== 0}}" class="imglab-imgage"  src="{{imgArr[0]}}"></image>
+    <canvas
+      style="width:{{imgWidth}};height:{{imgHeight}};position:absolute;top:0;left:0;"
+      canvas-id="first"
+      disable-scroll=true
+      bindtouchstart="bindtouchstart"
+      bindtouchmove="bindtouchmove"
+      bindtouchend="bindtouchend"
+      bindtap="bindtap"
+      bindlongpress="bindlongpress"
+    >
+    </canvas>
+    <image 
+      wx:if="{{imgArr.length !== 0}}" 
+      class="imglab-imgage" 
+      style="width:{{imgWidth}};height:{{imgHeight}}" 
+      src="{{imgArr[0]}}" 
+      bindload="imageLoad"
+    >
+    </image>
   </scroll-view>
   <view class="doSomething">
     <view class="btn">
