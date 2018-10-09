@@ -1,0 +1,18 @@
+<!--index.wxml-->
+<view class="container">
+  <scroll-view 
+    class="imglab"
+    scroll-x
+    scroll-y
+  >
+      <image wx:if="{{imgArr.length !== 0}}" class="imglab-imgage"  src="{{imgArr[0]}}"></image>
+  </scroll-view>
+  <view class="doSomething">
+    <view class="btn">
+        <button type="primary" bindtap="deleteImg">提交</button>
+    </view>
+    <view class="btn">
+        <button type="warn" bindtap="deleteImg">放弃</button>
+    </view>
+  </view>
+</view>
